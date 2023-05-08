@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option go_package = "arcaptcha/interview/riskscoreProto";
+
+package riskscore;
+
+service Riskscore {
+  rpc GetScore(GetScoreReq) returns (GetScoreResp) {}
+}
+
+message GetScoreReq {
+  string ip = 1;
+  string cr = 2;
+}
+
+message GetScoreResp {
+  int32 score = 1;
+}
+
+
